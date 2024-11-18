@@ -57,6 +57,11 @@ program PlotWaveformFFT
     do i = 1, wh%ndata
         T(i) = (i - 1) * wh%dt
     end do
+
+    ! Remove mean from each component
+    do i = 1, wh%ncom
+        wd(i,:) = wd(i,:) - (sum(wd(i,:)) / real(wh%ndata))
+    end do
     
     ! Prepare for FFT
     ! Find next power of 2 for FFT
