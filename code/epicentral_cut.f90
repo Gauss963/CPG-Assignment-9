@@ -132,7 +132,7 @@ program epicentral
             EQ_Y_proj_lat(m_inrange) = y_proj / 111.0 + lat_ref
 
             EQ_T(m_inrange) = t
-            EQ_Dist_Along_Profile(m_inrange) = t * length_profile  ! 距离剖面起点的距离（公里）
+            EQ_Dist_Along_Profile(m_inrange) = t * length_profile
         end if
     end do
     close(unit_num)
@@ -207,7 +207,7 @@ program epicentral
     ! Set up axes for cross-sectional plot
     ax_x_min = 0.0
     ax_x_max = length_profile
-    ax_y_min = EQ_Z_max + 10.0  ! 为了在图中增加一些空间
+    ax_y_min = EQ_Z_max + 10.0
     ax_y_max = EQ_Z_min - 10.0
 
     call pgsci(1)
